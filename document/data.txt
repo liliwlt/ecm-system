@@ -1,6 +1,6 @@
 5，21，应该是目前最费时间的一个bug：（8集的中间到9集的
         在后台的app.js里中间件，第一次进login没写return，可能还有其他的小问题，一起导致的
-        （  axios.config.js文件没写export default axios抛出给别人用；（解决：拷打deepseek很久才告诉我）
+        （  axios.config.js文件没写export default axios抛出给别人用；
             持票人Bearer ${token}写成$(token)；（解决：复看教学视频）    
         ）
         （  401，404，500错误交替反复出现，
@@ -13,8 +13,8 @@
                 理解了更多关于vscode终端的用法
 
         前端的post接后端的post，get接get
-        教学视频在写文件名时直接用了自动添加连接，害我找了很久
-        deepseek的图像识别好像不如豆包，最好是复制代码给它
+        教学视频在写文件名时直接用了自动添加连接
+       
         adminapi写成admiknapi还找不到所有写了admiknapi的地方 （解决：用clt+F点开每个文件）
         前端：vue.config.js        main.js      
         后端：app.js        www.js
@@ -62,7 +62,7 @@
 5，23，
     1--现象，center的表单输入时写了只能在失去焦点时改变输入框里的东西，改了trigger: 'blur'也没用，而且一次只能改一个字
             （解决：改回了store写法，username、introduction is not defined什么的错误没出现
-                    昨天的3--现象又改回username:""，也没出错了，妈的耍老子）
+                    昨天的3--现象又改回username:""，也没出错了）
 
                     
 5,26,
@@ -93,14 +93,13 @@
 
                     （解决：不算是解决方法吧，这个不能稳定复现，我也不知道是什么原理
                             把UserService里的upload里的gender改成了gender:Number(gender)
-                            把Center里deepseek给的uploadAvatar的if选择去掉，依然用视频里的computed三元规则
-                    为什么好了，为什么坏了，为什么啊，为什么啊
+                            把Center里deepseek给的uploadAvatar的if选择去掉，依然用的computed三元规则
                     问题还是存在，但是范围小了一点，原来是每一项提交都会报错，现在只有
-                    iu我抄你妈，又全报错了，为啥呀，好命苦，又是gender undefined
+                        又是gender undefined
 
 5,27,   昨天的报错，只要刷新后第一次改的没有性别，就会报错，第一次点了性别之后再怎么改都不会出错
 
-        我去，终于解决了，把UserController里登录时的gender写错了，写成了gender：result[0].gender ? result[0] : 0,
+        解决了，把UserController里登录时的gender写错了，写成了gender：result[0].gender ? result[0] : 0,
         现在改成了gender:result[0].gender ?? 0,就好了
 
     1，现象，在封装了center里的很多后，应该是file的处理不当，导致Upload  Cannot read properties of undefined (reading 'raw')
