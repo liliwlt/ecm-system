@@ -3,8 +3,9 @@
 
 const mongoose = require("mongoose")
 
+const dbURI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/company-system";
 
-mongoose.connect("mongodb://127.0.0.1:27017/company-system")
+mongoose.connect(dbURI)
   .then(() => console.log("✅ 数据库连接成功！"))
   .catch(err => console.error("❌ 数据库连接失败：", err));
 //company-system就是将来要创建的数据库的名字
