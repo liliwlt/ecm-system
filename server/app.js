@@ -4,19 +4,6 @@ var createError = require('http-errors');
 var express = require('express');
 
 
-app.use(cors({
-    origin: [
-        'http://localhost:8080',       // 本地开发后台
-        'http://localhost:5173',       // 本地开发门户
-        'https://ecm-system.vercel.app', // 你的线上前端地址
-        /\.vercel\.app$/               // 允许所有 vercel 子域名（方便预览）
-    ],
-    credentials: true
-}));
-
-
-
-
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -34,6 +21,23 @@ const JWT = require('./util/JWT');
 
 
 var app = express();
+
+
+app.use(cors({
+    origin: [
+        'http://localhost:8080',       // 本地开发后台
+        'http://localhost:5173',       // 本地开发门户
+        'https://ecm-system.vercel.app', // 你的线上前端地址
+        /\.vercel\.app$/               // 允许所有 vercel 子域名（方便预览）
+    ],
+    credentials: true
+}));
+
+
+
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
