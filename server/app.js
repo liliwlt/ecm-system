@@ -114,4 +114,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+console.log('✅ app.js 加载完成');
+
 module.exports = app;
