@@ -91,5 +91,6 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
+  console.log('✅ 服务已启动，监听端口：' + addr.port);   // ← 加这行
   debug('Listening on ' + bind);
 }
