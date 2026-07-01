@@ -1,5 +1,14 @@
 const cors = require('cors'); // 确保这行在最上面引入
 
+process.on('uncaughtException', (err) => {
+  console.error('❌ 未捕获的异常：', err);
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('❌ 未处理的 Promise 拒绝：', reason);
+});
+
+
 var createError = require('http-errors');
 var express = require('express');
 
