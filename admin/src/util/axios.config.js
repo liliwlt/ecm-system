@@ -2,8 +2,18 @@
 
 import axios from 'axios'
 
+const baseURL = import.meta.env.VITE_API_BASE_URL || '/adminapi'
+
+const instance = axios.create({
+    baseURL: baseURL,
+    timeout: 10000,
+    withCredentials: true
+})
+
+
+
 // 请求拦截器，在请求之前执行     请求    每个请求自动带上 token
-axios.interceptors.request.use( function (config) {
+instance.interceptors.request.use( function (config) {
     const token = localStorage.getItem("token")     //带着token去请求
     config.headers.Authorization = `Bearer ${token}` 
 
@@ -13,7 +23,7 @@ axios.interceptors.request.use( function (config) {
   });
 
 // 响应拦截器，在获取数据之前执行   成功响应      保存后端返回的新 token
-axios.interceptors.response.use( function (response) {
+instance.interceptors.response.use( function (response) {
     //console.log(response.headers)
     const {authorization} = response.headers
     authorization && localStorage.setItem("token",authorization)    //把token存在这里
@@ -30,5 +40,5 @@ axios.interceptors.response.use( function (response) {
     return Promise.reject(error);
   });
 
-  export default axios
+export default instance
 

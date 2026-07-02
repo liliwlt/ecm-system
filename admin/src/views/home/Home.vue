@@ -23,7 +23,7 @@
                 <el-carousel v-if="loopList.length" :interval="4000" type="card" height="200px">
                     <el-carousel-item v-for="item in loopList" :key="item._id">
                         <div :style="{
-                            backgroundImage:`url(http://localhost:3000${item.cover})`,
+                            backgroundImage:`url(http://ecm-system-production.up.railway.app${item.cover})`,
                             backgroundSize:'cover'
                         }"
                         >
@@ -44,7 +44,7 @@ const loopList = ref([])
 const store = useStore()   //钩子
 console.log(store.state)
 
-const avatarUrl = computed(()=>store.state.userInfo.avatar ? 'http://localhost:3000'+store.state.userInfo.avatar : "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png")
+const avatarUrl = computed(()=>store.state.userInfo.avatar ? 'http://ecm-system-production.up.railway.app'+store.state.userInfo.avatar : "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png")
 
 const welcomeText = computed(()=>new Date().getHours()<12 ? '好好工作' : '该午休了')
 

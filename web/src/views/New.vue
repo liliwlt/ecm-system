@@ -30,7 +30,7 @@
 </template>
 <script setup>
 import { onMounted,ref ,watchEffect,onBeforeUnmount} from 'vue'
-import axios from 'axios'
+import axios from '@/util/axios.config'
 import { useRoute,useRouter } from 'vue-router'
 import moment from 'moment'
 

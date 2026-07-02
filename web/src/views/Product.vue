@@ -2,7 +2,7 @@
     <div>
         <el-carousel height="calc(100vh - 60px)" direction="vertical" :autoplay="false" v-if="looplist.length">
             <el-carousel-item v-for="item in looplist" :key="item._id">
-                <div class="item" :style="{ backgroundImage: `url(http://localhost:3000${item.cover})` }">
+                <div class="item" :style="{ backgroundImage: `url(http://ecm-system-production.up.railway.app${item.cover})` }">
 
                     <el-card class="card">
                         <template #header>
@@ -26,7 +26,7 @@
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import axios from '@/util/axios.config'
 const looplist = ref([])
 onMounted(async () => {
     const res = await axios.get('/webapi/product/list')

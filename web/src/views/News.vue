@@ -53,7 +53,7 @@
                         
                         </template>
                         
-                        <div class="image" :style="{backgroundImage:`url(http://localhost:3000${item.cover})`}"></div>
+                        <div class="image" :style="{backgroundImage:`url(http://ecm-system-production.up.railway.app${item.cover})`}"></div>
 
                     </el-card>
                 </el-col>
@@ -76,7 +76,7 @@
 
                                 <el-card shadow="hover" @click="handelChangepage(data._id)">
 
-                                    <div class="tab-image" :style="{backgroundImage:`url(http://localhost:3000${data.cover})`}"></div>
+                                    <div class="tab-image" :style="{backgroundImage:`url(http://ecm-system-production.up.railway.app${data.cover})`}"></div>
                                     <div style="padding:10px;float:left;">
                                         <div>{{data.title}}</div>
                                         <div class="tab-time">{{ whichTime(data.editTime )}}</div>
@@ -110,7 +110,7 @@
 </template>
 <script setup>
 import {ref,onMounted,computed} from 'vue'
-import axios from 'axios'
+import axios from '@/util/axios.config'
 import moment from 'moment'         //时间
 import _ from 'lodash'
 import {useRouter} from 'vue-router'

@@ -8,7 +8,7 @@
                 <el-table-column  label="头像" width="180">            
                 <template #default="scope">
                     <div v-if="scope.row.avatar">     
-                        <el-avatar :siaze="50" :src="'http://localhost:3000'+scope.row.avatar"></el-avatar>
+                        <el-avatar :siaze="50" :src="'http://ecm-system-production.up.railway.app'+scope.row.avatar"></el-avatar>
 
                     </div>
                     <div v-else>
