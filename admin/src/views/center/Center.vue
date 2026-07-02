@@ -67,7 +67,7 @@ import Upload from '@/components/upload/Upload'
 
 
 const store = useStore()
-const avatarUrl = computed(()=>store.state.userInfo.avatar ? 'http://ecm-system-production.up.railway.app'+store.state.userInfo.avatar : "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png")
+const avatarUrl = computed(()=>store.state.userInfo.avatar ? 'https://ecm-system-production.up.railway.app'+store.state.userInfo.avatar : "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png")
 
 const {username,gender,introduction,avatar} = store.state.userInfo     
 Upload

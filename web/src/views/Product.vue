@@ -2,7 +2,7 @@
     <div>
         <el-carousel height="calc(100vh - 60px)" direction="vertical" :autoplay="false" v-if="looplist.length">
             <el-carousel-item v-for="item in looplist" :key="item._id">
-                <div class="item" :style="{ backgroundImage: `url(http://ecm-system-production.up.railway.app${item.cover})` }">
+                <div class="item" :style="{ backgroundImage: `url(https://ecm-system-production.up.railway.app${item.cover})` }">
 
                     <el-card class="card">
                         <template #header>
@@ -12,7 +12,7 @@
                         </template>
                         <p>{{ item.introduction }}</p>
                         <p class="detail">{{ item.detail }}</p>
-                        <p class="more"> 更多信息请访问：<br>http://11111111 </p>
+                        <p class="more"> 更多信息请访问：<br>https://11111111 </p>
                     </el-card>
 
                 </div>

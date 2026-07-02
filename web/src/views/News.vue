@@ -53,7 +53,7 @@
                         
                         </template>
                         
-                        <div class="image" :style="{backgroundImage:`url(http://ecm-system-production.up.railway.app${item.cover})`}"></div>
+                        <div class="image" :style="{backgroundImage:`url(https://ecm-system-production.up.railway.app${item.cover})`}"></div>
 
                     </el-card>
                 </el-col>
@@ -76,7 +76,7 @@
 
                                 <el-card shadow="hover" @click="handelChangepage(data._id)">
 
-                                    <div class="tab-image" :style="{backgroundImage:`url(http://ecm-system-production.up.railway.app${data.cover})`}"></div>
+                                    <div class="tab-image" :style="{backgroundImage:`url(https://ecm-system-production.up.railway.app${data.cover})`}"></div>
                                     <div style="padding:10px;float:left;">
                                         <div>{{data.title}}</div>
                                         <div class="tab-time">{{ whichTime(data.editTime )}}</div>

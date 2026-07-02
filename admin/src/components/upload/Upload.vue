@@ -27,7 +27,7 @@ const uploadAvatar =computed(
     ()=>
     props.avatar.includes("blob")
         ? props.avatar
-        : 'http://localhost:3000'+props.avatar
+        : 'https://ecm-system-production.up.railway.app'+props.avatar
 )
 
 //每次选择完图片之后的回调
