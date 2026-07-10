@@ -81,7 +81,7 @@ const submitForm=()=>{
         if(valid){
             console.log(newsForm)
             //后台通信
-            await upload("/news/list",newsForm)
+            await upload("/adminapi/news/list",newsForm)
             router.back()
         }
     })
@@ -94,7 +94,7 @@ const handleBack =()=>{
 
 //取当前页面数据，需要拿到当前页面的id值
 onMounted(async()=>{
-    const res = await axios.get(`/news/list/${route.params.id}`)
+    const res = await axios.get(`/adminapi/news/list/${route.params.id}`)
     Object.assign(newsForm,res.data.data[0])
 })
 

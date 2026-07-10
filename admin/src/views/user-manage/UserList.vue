@@ -125,7 +125,7 @@ onMounted(()=>{
 })
 
 const getTableData = async()=>{
-    const res = await axios.get("/user/list")
+    const res = await axios.get("/adminapi/user/list")
     console.log(res.data)
     tableData.value = res.data.data
 }
@@ -133,7 +133,7 @@ const getTableData = async()=>{
 const handleEdit = async(data)=>{
     //console.log(data)
     
-    const res = await axios.get(`/user/list/${data._id}`);    
+    const res = await axios.get(`/adminapi/user/list/${data._id}`);    
     console.log(res.data.data)
     Object.assign(userForm,res.data.data[0])        //把后面的合并到前面的去
 
@@ -145,7 +145,7 @@ const handleEditConfirm = ()=>{
         userFormRef.value.validate(async(valid)=>{
         if(valid){
             //1-更新后端     2-dialog隐藏       3-获取table数据
-            await axios.put(`/user/list/${userForm._id}`,userForm)
+            await axios.put(`/adminapi/user/list/${userForm._id}`,userForm)
             dialogVisible.value = false
             getTableData();
 
@@ -158,7 +158,7 @@ const handleEditConfirm = ()=>{
 
 const handleDelete = async(data)=>{
     console.log(data)
-    await axios.delete(`/user/list/${data._id}`)    
+    await axios.delete(`/adminapi/user/list/${data._id}`)    
                //                          -----------动态路由的方式
     //reload page刷新页面，性能最不好    reload data刷新数据     tabledata本地删除，性能最好不用重新获取后端信息
     getTableData();

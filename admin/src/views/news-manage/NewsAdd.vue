@@ -79,7 +79,7 @@ const submitForm=()=>{
         if(valid){
             console.log(newsForm)
             //后台通信
-            await upload("/news/add",newsForm)
+            await upload("/adminapi/news/add",newsForm)
             router.push(`/news-manage/newslist`)
         }
     })

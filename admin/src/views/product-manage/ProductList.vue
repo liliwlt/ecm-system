@@ -52,7 +52,7 @@ onMounted(()=>{
     getTableData()
 })
 const getTableData =async()=>{
-    const res = await axios.get(`/product/list`)
+    const res = await axios.get(`/adminapi/product/list`)
     console.log(res.data.data)
     tableData.value = res.data.data
 }
@@ -60,7 +60,7 @@ const getTableData =async()=>{
 
 //删除回调
 const handleDelete =async(item)=>{
-    await axios.delete(`/product/list/${item._id}`)
+    await axios.delete(`/adminapi/product/list/${item._id}`)
     await getTableData()
 }
 

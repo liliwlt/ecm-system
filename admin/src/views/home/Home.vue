@@ -52,7 +52,7 @@ onMounted(()=>{
     getData()
 })
 const getData =async()=>{
-    const res = await axios.get(`/product/list`)
+    const res = await axios.get(`/adminapi/product/list`)
     loopList.value = res.data.data
     console.log(loopList.value)
 }

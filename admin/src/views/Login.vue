@@ -64,7 +64,7 @@ const submitForm = () =>{
     console.log(valid)
     if(valid){                                   
 
-      axios.post(`/user/login`,loginForm).then(res=>{
+      axios.post(`/adminapi/user/login`,loginForm).then(res=>{
         console.log(res.data)
         if(res.data.ActionType==="ok"){
           store.commit("changeUserInfo",res.data.data)
