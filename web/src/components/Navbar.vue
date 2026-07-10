@@ -23,7 +23,7 @@ import {useRoute} from 'vue-router'
 const route = useRoute()
 
 const handleClick = ()=>{
-    window.location = "http://localhost:8080"
+    window.location = "https://ecm-system-production.up.railway.app"
 }
 
 </script> 

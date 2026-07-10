@@ -79,7 +79,7 @@ const submitForm=()=>{
         if(valid){
             console.log(newsForm)
             //后台通信
-            await upload("/adminapi/news/add",newsForm)
+            await upload("/news/add",newsForm)
             router.push(`/news-manage/newslist`)
         }
     })
@@ -90,6 +90,4 @@ const submitForm=()=>{
 .el-form{
     margin-top:50px;
 }
-
-
 </style>

@@ -60,14 +60,11 @@ const submitForm=()=>{
         if(valid){
             console.log(productForm)
             //后台通信
-            await upload("/adminapi/product/add",productForm)
+            await upload("/product/add",productForm)
             router.push(`/product-manage/productlist`)
         }
     })
 }
-
-
-
 
 </script>
 <style scoped>

@@ -85,7 +85,7 @@ onMounted(()=>{
     getTableData()
 })
 const getTableData =async()=>{
-    const res = await axios.get(`/adminapi/news/list`)
+    const res = await axios.get(`/news/list`)
     console.log(res.data.data)
     tableData.value = res.data.data
 }
@@ -98,7 +98,7 @@ const categoryFormat = (category)=>{
 
 //开关回调
 const handleSwitchChange =async(item)=>{
-    await axios.put(`/adminapi/news/publish`,{_id:item._id,isPublish:item.isPublish})
+    await axios.put(`/news/publish`,{_id:item._id,isPublish:item.isPublish})
     await getTableData()
 }
 
@@ -111,7 +111,7 @@ const handlePreview = async(data)=>{
 
 //删除回调
 const handleDelete =async(item)=>{
-    await axios.delete(`/adminapi/news/list/${item._id}`)
+    await axios.delete(`/news/list/${item._id}`)
     await getTableData()
 }
 

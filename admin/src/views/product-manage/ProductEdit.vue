@@ -63,7 +63,7 @@ const submitForm=()=>{
         if(valid){
             console.log(productForm)
             //后台通信
-            await upload("/adminapi/product/list",productForm)
+            await upload("/product/list",productForm)
             router.push(`/product-manage/productlist`)
         }
     })
@@ -77,7 +77,7 @@ onMounted(()=>{
     getData()
 })
 const getData = async()=>{
-    const res = await axios.get(`/adminapi/product/list/${route.params.id}`)
+    const res = await axios.get(`/product/list/${route.params.id}`)
     Object.assign(productForm,res.data.data[0])
 }
 

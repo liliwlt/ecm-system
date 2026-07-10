@@ -52,21 +52,16 @@ onMounted(()=>{
     getData()
 })
 const getData =async()=>{
-    const res = await axios.get(`/adminapi/product/list`)
+    const res = await axios.get(`/product/list`)
     loopList.value = res.data.data
     console.log(loopList.value)
 }
 
-
 </script>
-
-
 <style scoped>
 .card{
     margin:20px;
 }
-
-
 
 .el-carousel__item h3 {
   color: #244e86;
