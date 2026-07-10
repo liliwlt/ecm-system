@@ -37,7 +37,11 @@ app.use(cors({
         'http://localhost:8080',       // 本地开发后台
         'http://localhost:5173',       // 本地开发门户
         'https://ecm-system.vercel.app', // 你的线上前端地址
-        /\.vercel\.app$/               // 允许所有 vercel 子域名（方便预览）
+        /\.vercel\.app$/,               // 允许所有 vercel 子域名（方便预览）
+        //添加 netlify 域名
+        'https://jolly-medovik-f7def5.netlify.app',   // web 项目
+        'https://ecm-system-backstage.netlify.app',   // admin 后台
+        /\.netlify\.app$/   // 允许所有 netlify.app 子域名
     ],
     credentials: true
 }));
