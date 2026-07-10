@@ -2,9 +2,9 @@
 
 import axios from 'axios'
 
-const baseURL = process.env.VITE_API_BASE_URL || '/adminapi'
+const baseURL = process.env.VUE_APP_API_BASE_URL|| '/adminapi'
 
-console.log('环境变量:', import.meta.env.VITE_API_BASE_URL)
+console.log('环境变量:', import.meta.env.VUE_APP_API_BASE_URL)
 console.log('🔍 baseURL:', baseURL) 
 
 const instance = axios.create({
