@@ -4,12 +4,13 @@ import axios from 'axios'
 
 const baseURL = import.meta.env.VITE_API_BASE_URL || '/adminapi'
 
+console.log('环境变量:', import.meta.env.VITE_API_BASE_URL)
+
 const instance = axios.create({
     baseURL: baseURL,
     timeout: 10000,
     withCredentials: true
 })
-
 
 
 // 请求拦截器，在请求之前执行     请求    每个请求自动带上 token
