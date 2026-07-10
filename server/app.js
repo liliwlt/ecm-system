@@ -70,7 +70,7 @@ app.use((req,res,next)=>{           // 中间件
   //如果token有效，next（）
   //如果token过期 返回401错误给前端
   //如果第一次进入接口，先放行
-  if(req.url==="/adminapi/user/login"){      //如果第一次进入login，先放行      需要写===才是比较
+  if(req.url === "/adminapi/user/login" || req.url === "/user/login"){      //如果第一次进入login，先放行      需要写===才是比较
     next()
     return;   
   }
