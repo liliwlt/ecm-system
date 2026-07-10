@@ -70,7 +70,10 @@ const submitForm = () =>{
           store.commit("changeUserInfo",res.data.data)
           store.commit("changeGetterRouter",false)
           console.log("现在changeGetterRouter是:",store.state.isGetterRouter)
+          console.log("准备跳转")
+          console.log("当前路由列表:", router.getRoutes().map(r => r.path))
           router.push("/home") 
+          console.log(" 跳转完成，当前路径:", router.currentRoute.value.path)
         }else{
           ElMessage.error('用户名与密码不匹配。')
           
