@@ -87,7 +87,7 @@ const router = useRouter()
 const submitForm = ()=>{
     userFormRef.value.validate(async(valid)=>{
         if(valid){
-            const res = await upload('/user/add',userForm)
+            const res = await upload('/adminapi/user/add',userForm)
             router.push(`/user-manage/userlist`)
         }
     })

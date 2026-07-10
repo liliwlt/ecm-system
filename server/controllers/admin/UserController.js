@@ -4,8 +4,11 @@ const UserService = require("../../services/admin/UserService")
 const JWT = require("../../util/JWT")
 
 const UserController = {
-
     login:async( req,res )=>{
+        console.log('🔍 req.body:', req.body)
+        console.log('🔍 用户名:', req.body.username)
+        console.log('🔍 密码:', req.body.password)
+        console.log('🔍 密码类型:', typeof req.body.password)
         //用req.body接收前端发来的用户名密码什么的   
         var result = await UserService.login(req.body)           //在UserService里再具体的进行增删改查 
         // 上面这一行是在处理，处理完之后再决定给前端返回什么
