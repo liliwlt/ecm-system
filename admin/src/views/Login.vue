@@ -60,11 +60,11 @@ const router = useRouter()
 
 const submitForm = () =>{
   //1，校验表单
-  loginFormRef.value.validate((valid)=>{       
+  loginFormRef.value.validate(async(valid)=>{       
     console.log(valid)
     if(valid){                                   
 
-      axios.post(`/adminapi/user/login`,loginForm).then(res=>{
+      const res = await axios.post(`/adminapi/user/login`,loginForm).then(res=>{
         console.log(res.data)
         if(res.data.ActionType==="ok"){
           store.commit("changeUserInfo",res.data.data)
