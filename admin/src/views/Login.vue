@@ -58,13 +58,13 @@ const loginRules = reactive({
 //通过钩子来调用，不用this来访问 
 const router = useRouter()
 
-const submitForm = () =>{
+/* const submitForm = () =>{
   //1，校验表单
-  loginFormRef.value.validate(async(valid)=>{       
+  loginFormRef.value.validate((valid)=>{       
     console.log(valid)
     if(valid){                                   
 
-      const res = await axios.post(`/adminapi/user/login`,loginForm).then(res=>{
+      axios.post(`/adminapi/user/login`,loginForm).then(res=>{
         console.log(res.data)
         if(res.data.ActionType==="ok"){
           store.commit("changeUserInfo",res.data.data)
@@ -79,6 +79,20 @@ const submitForm = () =>{
           
         }
       })
+    }
+  })
+} */
+const submitForm = async () => {
+  loginFormRef.value.validate(async (valid) => {
+    if (valid) {
+      const res = await axios.post(`/adminapi/user/login`, loginForm)
+      if (res.data.ActionType === "ok") {
+        store.commit("changeUserInfo", res.data.data)
+        store.commit("changeGetterRouter", false)
+        console.log("🔍 isGetterRouter 已设为 false")
+        await router.push("/home")
+        console.log("🔍 router.push 完成")
+      }
     }
   })
 }
